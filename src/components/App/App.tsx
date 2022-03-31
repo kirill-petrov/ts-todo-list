@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import TodoApp from '../TodoApp'
+import TodoApp from '../TodoApp.tsx';
 
-import './App.css'
+import './App.css';
 
 function App() {
   return (
     <div className="app">
-      <TodoApp/>
+      <TodoApp />
     </div>
   );
 }

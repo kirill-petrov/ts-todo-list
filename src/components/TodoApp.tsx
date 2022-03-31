@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TodoApp = () => {
+function TodoApp() {
   const [tasks, setTasks] = useState([]);
 
   const handleSubmit = (e: any) => {
@@ -12,26 +12,34 @@ const TodoApp = () => {
         //   id: tasks.length + 1,
         //   task: e.target.value
         // }
-      ]
+      ],
     );
   };
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input name='add-todo' type="text" placeholder="Новая задача" />
+        <input
+          name="add-todo"
+          type="text"
+          placeholder="Новая задача"
+        />
         <button>Сохранить</button>
       </form>
 
-      <input name='filter' type="text" placeholder="Поиск" />
+      <input
+        name="filter"
+        type="text"
+        placeholder="Поиск"
+      />
 
       {
-        tasks.length ?
-          <p>todoList</p> :
-          <p>List empty</p>
+        tasks.length
+          ? <p>todoList</p>
+          : <p>List empty</p>
       }
       <button>Удалить</button>
     </div>
   );
-};
+}
 
 export default TodoApp;
