@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Todos = () => {
+const TodoApp = () => {
   return (
     <div>
-      todo-list
+      lkk
     </div>
   );
 };
 
-export default Todos;
+export default TodoApp;
