@@ -1,12 +1,15 @@
 import React from 'react';
+import { Typography } from '@mui/material';
 
 import TodoApp from '../TodoApp';
 
-import './App.css';
-
 function App() {
   return (
-    <div className="app">
+    <div>
+      <Typography variant="h1" color="primary">
+        qwe
+      </Typography>
+
       <TodoApp />
     </div>
   );
