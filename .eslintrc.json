@@ -9,6 +9,7 @@
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
@@ -24,7 +25,11 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "require-jsdoc": "off",
