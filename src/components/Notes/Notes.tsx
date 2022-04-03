@@ -6,7 +6,7 @@ function Notes() {
   return (
     <div>
       <Typography
-        variant="h1"
+        variant="h6"
         color="primary"
         align="center"
       >
