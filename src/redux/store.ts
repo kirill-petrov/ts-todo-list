@@ -1,12 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import counterReducer from './reducers/counterReducer';
-// import todoReducer from './reducers/todoReducer';
+import todoReducer from './reducers/todoReducer';
+
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  todo: todoReducer,
+});
 
 const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-    // todo: todoReducer,
-  },
+  reducer: rootReducer,
 });
 
 store.subscribe(() => {

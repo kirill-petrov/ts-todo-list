@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { todoAdd } from '../../redux/reducers/todoReducer';
 
 export default function AddingTodo() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [tasks, setTasks] = useState([] as any);
+  const todoList = useSelector((state) => state.todo);
+  const dispatch = useDispatch();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    setTasks([
-      ...tasks,
-      {
-        id: tasks.length + 1,
+    dispatch(
+      todoAdd({
+        id: todoList.length + 1,
         text: e.target.inboxTodo.value,
-      },
-    ]);
-
+      })
+    );
     e.target.reset();
   };
 
@@ -29,7 +29,7 @@ export default function AddingTodo() {
         <button type="submit">Сохранить</button>
       </form>
 
-      <pre>tasks: {JSON.stringify(tasks, null, 2)}</pre>
+      {/* <pre>tasks: {JSON.stringify(tasks, null, 2)}</pre> */}
     </div>
   );
 }
