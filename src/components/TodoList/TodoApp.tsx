@@ -1,6 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
+
 import AddingTodo from './AddingTodo';
+import Filter from './Filter';
 
 function TodoApp() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -9,11 +11,7 @@ function TodoApp() {
     <div>
       <AddingTodo />
 
-      <input
-        name="filter"
-        type="text"
-        placeholder="Поиск"
-      />
+      <Filter />
 
       {1 ? (
         <ul>
@@ -26,7 +24,6 @@ function TodoApp() {
         <p>Задач нет</p>
       )}
 
-      <button type="submit">Удалить</button>
       <ul>
         {/* <ol>записывать значение из inboxTask в tasks</ol> */}
         {/* <ol>выводить элементы задач</ol> */}
