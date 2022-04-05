@@ -1,11 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import AddingTodo from './AddingTodo';
 import Filter from './Filter';
+import TodoItem from './TodoItem';
 
 function TodoApp() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const todoList = useSelector((state) => state.todo);
 
   return (
     <div>
@@ -13,12 +16,15 @@ function TodoApp() {
 
       <Filter />
 
-      {1 ? (
+      {todoList.length ? (
         <ul>
           {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-          {/* {tasks.map((item: any) => (
-            <li key={item.id}>{item.text}</li>
-          ))} */}
+          {todoList.map((item: any) => (
+            <TodoItem
+              key={item.id}
+              text={item.text}
+            />
+          ))}
         </ul>
       ) : (
         <p>Задач нет</p>
