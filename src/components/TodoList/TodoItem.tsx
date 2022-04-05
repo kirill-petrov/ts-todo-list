@@ -1,12 +1,6 @@
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import React from 'react';
 
-type OwnProps = {
-  myCustomProp?: 'some' | 'other';
-} & ButtonHTMLAttributes<HTMLButtonElement>;
-
-type Props = FC<OwnProps>;
-
-function TodoItem({ id, text }): Props {
+function TodoItem({ id, text }) {
   return (
     <li key={id}>
       {id} {text}
